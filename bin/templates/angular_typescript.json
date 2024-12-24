@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "eslint-config-impetus-basetest/angular-typescript-essential.js"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "settings": {
+  },
+  "rules": {
+  },
+  "overrides": [
+  ]
+}

@@ -1,0 +1,13 @@
+# Ignores mentioned files/folders
+
+# compiled output
+/dist
+
+# dependencies
+/node_modules
+
+# misc
+/public
+/coverage
+/reports
+/typings

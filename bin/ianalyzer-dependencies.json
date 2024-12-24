@@ -1,0 +1,199 @@
+{
+    "defaultPackages": [],
+    "frameworks": [
+        {
+            "seqNo": 1,
+            "type": "Angular",
+            "languageType": [
+                {
+                    "subType": "JavaScript",
+                    "requiredPackages": [
+                        {
+                            "packageName": "@typescript-eslint/parser",
+                            "version": "^5.54.0"
+                        },
+                        {
+                            "packageName": "@typescript-eslint/eslint-plugin",
+                            "version": "^5.54.0"
+                        },
+                        {
+                            "packageName": "@angular-eslint/eslint-plugin",
+                            "version": "^15.2.1"
+                        },
+                        {
+                            "packageName": "@angular-eslint/eslint-plugin-template",
+                            "version": "^15.2.1"
+                        }
+                    ],
+                    "eslintrcPath": "templates/angular_javascript.json"
+                },
+                {
+                    "subType": "TypeScript",
+                    "requiredPackages": [
+                        {
+                            "packageName": "@typescript-eslint/parser",
+                            "version": "^5.54.0"
+                        },
+                        {
+                            "packageName": "@typescript-eslint/eslint-plugin",
+                            "version": "^5.54.0"
+                        },
+                        {
+                            "packageName": "@angular-eslint/eslint-plugin",
+                            "version": "^15.2.1"
+                        },
+                        {
+                            "packageName": "@angular-eslint/eslint-plugin-template",
+                            "version": "^15.2.1"
+                        },
+                        {
+                            "cmd": ["./scripts/angular-eslint-setup.js"]    
+                        }
+                    ],
+                    "eslintrcPath": "templates/angular_typescript.json"
+                }
+            ]
+        },
+        {
+            "seqNo": 2,
+            "type": "React",
+            "languageType": [
+                {
+                    "subType": "JavaScript",
+                    "requiredPackages": [
+                        {
+                            "packageName": "eslint-plugin-jest",
+                            "version": "^23.17.1",
+                            "peerDependencies": [
+                              {
+                                "packageName": "jest",
+                                "version": "*"
+                              }
+                            ]
+                        },
+                        {
+                            "packageName": "eslint-plugin-react",
+                            "version": "^7.32.2"
+                        },
+                        {
+                            "packageName": "eslint-plugin-react-hooks",
+                            "version": "^4.6.0"
+                        },
+                        {
+                            "packageName": "eslint-plugin-jsx-a11y",
+                            "version": "^6.7.1"
+                        },
+                        {
+                            "packageName": "@typescript-eslint/eslint-plugin",
+                            "version": "^5.54.0"
+                        },
+                        {
+                            "packageName": "@typescript-eslint/parser",
+                            "version": "^5.54.0"
+                        },
+                        {
+                            "cmd": ["./scripts/react-babel-parser.js"]
+                        }
+                    ],
+                    "eslintrcPath": "templates/react_javascript.json"
+                },
+                {
+                    "subType": "TypeScript",
+                    "requiredPackages": [
+                        {
+                            "packageName": "eslint-plugin-jest",
+                            "version": "^23.17.1",
+                            "peerDependencies": [
+                                {
+                                  "packageName": "jest",
+                                  "version": "*"
+                                }
+                              ]
+                        },
+                        {
+                            "packageName": "eslint-plugin-react",
+                            "version": "^7.32.2"
+                        },
+                        {
+                            "packageName": "eslint-plugin-react-hooks",
+                            "version": "^4.6.0"
+                        },
+                        {
+                            "packageName": "eslint-plugin-jsx-a11y",
+                            "version": "^6.7.1"
+                        },
+                        {
+                            "packageName": "@typescript-eslint/eslint-plugin",
+                            "version": "^5.54.0"
+                        },
+                        {
+                            "packageName": "@typescript-eslint/parser",
+                            "version": "^5.54.0"
+                        },
+                        {
+                            "cmd": ["./scripts/react-babel-parser.js"]
+                        }
+                    ],
+                    "eslintrcPath": "templates/react_typescript.json"
+                }
+            ]
+        },
+        {
+            "seqNo": 3,
+            "type": "Vue",
+            "languageType": [
+                {
+                    "subType": "JavaScript",
+                    "requiredPackages": [
+                        {
+                            "packageName": "eslint-plugin-vue",
+                            "version": "9.15.1"
+                        }
+                    ],
+                    "eslintrcPath": "templates/vue_javascript.json"
+                },
+                {
+                    "subType": "TypeScript",
+                    "requiredPackages": [
+                        {
+                            "packageName": "eslint-plugin-vue",
+                            "version": "9.15.1"
+                        }
+                    ],
+                    "eslintrcPath": "templates/vue_typescript.json"
+                }
+            ]
+        },
+        {
+            "seqNo": 4,
+            "type": "Vanilla JS/ES6",
+            "languageType": [
+                {
+                    "subType": "JavaScript",
+                    "requiredPackages": [],
+                    "eslintrcPath": "templates/javascript.json"
+                }
+            ]
+        },
+        {
+            "seqNo": 5,
+            "type": "TypeScript",
+            "languageType": [
+                {
+                    "subType": "TypeScript",
+                    "requiredPackages": [
+                        {
+                            "packageName": "@typescript-eslint/eslint-plugin",
+                            "version": "^5.54.0"
+                        },
+                        {
+                            "packageName": "@typescript-eslint/parser",
+                            "version": "^5.54.0"
+                        }
+                    ],
+                    "eslintrcPath": "templates/typescript.json"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-rscss/config"
+  ],
+  "rules": {
+    "no-empty-source": null,
+    "at-rule-no-unknown": null,
+    "at-rule-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "rscss/class-format": [
+      true,
+      {
+        "maxDepth": 4,
+        "componentWhitelist": [
+          "btn",
+          "container"
+        ]
+      }
+    ]
+  }
+}
