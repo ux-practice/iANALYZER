@@ -1,0 +1,17 @@
+# Ignore artifacts:
+package.json
+package-lock.json
+yarn.lock
+node_modules
+.ianalyzerrc.json
+.prettierrc
+.stylelintrc.json
+angular.json
+reports
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
+.vscode/extensions.json
+.vscode/launch.json
+.vscode/tasks.json
+README.md

@@ -1,0 +1,92 @@
+{
+  "name": "ianalyzer",
+  "version": "1.0.1",
+  "description": "A versatile code analysis tool for JavaScript, HTML, CSS, Angular, React, Vue, and ES6. iAnalyzer ensures code quality through linting, integrates with Sonar for in-depth analysis, performs npm package security checks, assesses performance, and enhances accessibility. Your all-in-one solution for maintaining high-quality and secure code.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/index.js",
+    "eslint:react": "eslint --ext js,jsx,snap,md .",
+    "eslint:angular": "eslint --ext ts,tsx .",
+    "depinstall": "npm install",
+    "test": "jest -i --silent --forceExit",
+    "coverage": "jest --coverage -i --silent --forceExit",
+    "postinstall": "node initializeConfig.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ux-practice/iANALYZER.git"
+  },
+  "keywords": [
+    "lint", 
+    "code analysis", 
+    "security", 
+    "performance", 
+    "accessibility", 
+    "Sonar",
+    "style guide",
+    "ESLint",
+    "ECMAScript",
+    "JavaScript",
+    "es6",
+    "TypeScript",
+    "Angular",
+    "React",
+    "JSX",
+    "VUE"
+  ],
+  "author": "Maneesh Thareja",
+  "contributors": [
+    {
+      "name": "Himanshu Agarwal"
+    },
+    {
+      "name": "Lokesh Jindal"
+    },
+    {
+      "name": "Aanchal Fatwani"
+    },
+    {
+      "name": "Kundan Sharma"
+    },
+    {
+      "name": "Anurag Jain"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ux-practice/iAnalyzer/issues"
+  },
+  "homepage": "https://github.com/ux-practice/iAnalyzer.git",
+  "engines": {
+    "node": "^10.12.0 || ^12.22.0 || ^14.17.0 || >=16.0.0"
+  },
+  "dependencies": {
+    "readline": "^1.3.0",
+    "v8-compile-cache": "^2.0.3",
+    "confusing-browser-globals": "^1.0.7",
+    "object.assign": "^4.1.0",
+    "object.entries": "^1.1.5",
+    "eclint": "^2.8.1",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-find-rules": "^4.1.0",
+    "eslint-plugin-import": "^2.22.1 || ^2.27.5",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-config-impetus-basetest": "^1.2.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3 || ^29.4.3",
+    "minimist": "^1.2.6"
+  },
+  "peerDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-import": "^2.22.1 || ^2.27.5"
+  },
+  "bin": {
+    "ianalyzer": "bin/index.js",
+    "ianalyzer-report": "bin/report-config.js",
+    "ianalyzer-css-report": "bin/css-report-config.js",
+    "ianalyzer-cmd": "bin/linter-config.js"
+  }
+}

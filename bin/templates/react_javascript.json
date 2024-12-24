@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "eslint-config-impetus-basetest/react-javascript-essential.js"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+  },
+  "overrides": [
+  ]
+}

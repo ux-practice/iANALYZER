@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "eslint:recommended"
+  ],
+  "plugins": [
+    "html"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2015
+  },
+  "settings": {
+    "html/indent": "+2",
+    "html/report-bad-indent": "error"
+  }
+}

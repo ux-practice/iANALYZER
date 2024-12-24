@@ -1,0 +1,53 @@
+#############################
+# ENVIRONMENT VARIABLES
+# UXP_LINTER_TEST_GITHUB_TOKEN - Personal Access Token created in Github Repo.....
+# UXP_LINTER_TEST_PROJECT_DIR - Temporary workspace created through runner eg. /var/www/cicd
+#############################
+stages:
+  - deploy
+
+image: node:latest
+# Config cache
+cache:
+  paths:
+    - node_modules/
+
+# Deploy job
+deploy:
+  # Docker image
+  #image: node:latest
+  stage: deploy
+  # Config to use GitLab Shared Runner with Executor Docker
+  tags:
+    - power-shell-runner
+  script:
+    - $srcDir = "$pwd\*"
+    - $destDir = "$UXP_LINTER_TEST_PROJECT_DIR"
+    - Copy-Item $srcDir $destDir -Exclude @("node_modules",".git") -Recurse -Force
+    - Set-Location -Path $UXP_LINTER_TEST_PROJECT_DIR
+    - $GIT_PATH = Join-Path -Path $UXP_LINTER_TEST_PROJECT_DIR -ChildPath .git
+    - $IS_GIT_INITIALISED = Test-Path -Path $GIT_PATH
+
+    - if (!$IS_GIT_INITIALISED) { git init }
+    - $IS_REF_PRESENT = git show-ref --heads $CI_COMMIT_REF_NAME; $?
+    - if (!$IS_REF_PRESENT) { git checkout -b $CI_COMMIT_REF_NAME } else { git checkout $CI_COMMIT_REF_NAME }
+    - git status
+    - git config user.email $GITLAB_USER_EMAIL
+    - git config user.name $GITLAB_USER_NAME
+    - Set-Location -Path "$UXP_LINTER_TEST_PROJECT_DIR\.git"
+    - Set-Location -Path $UXP_LINTER_TEST_PROJECT_DIR
+    - git add .
+    - $IS_VALID_COMMIT = git commit -m $CI_COMMIT_MESSAGE; $?
+    - if ($IS_VALID_COMMIT) {
+        $GIT_REMOTE = git config remote.origin.url; $?;
+        $GITHUB_URL = "https://ux-practice:$UXP_LINTER_TEST_GITHUB_TOKEN@github.com/ux-practice/iAnalyzer-test.git";
+        if ($GIT_REMOTE -AND !$GIT_REMOTE.Contains($UXP_LINTER_TEST_GITHUB_TOKEN)) { git remote remove origin };
+        $GIT_REMOTE = git config remote.origin.url; $?;
+        if (!$GIT_REMOTE) { git remote add origin $GITHUB_URL} ;
+        $GIT_REMOTE_REF = git ls-remote --exit-code --heads $GITHUB_URL $CI_COMMIT_REF_NAME ; $?;
+        if ($GIT_REMOTE_REF) { git pull origin $CI_COMMIT_REF_NAME --allow-unrelated-histories };
+        git push --set-upstream origin $CI_COMMIT_REF_NAME;
+      }
+  # Defines the names of branches and tags the job runs for
+  only:
+    - Linter_2.0_RELEASE_TEST_PIPELINE
